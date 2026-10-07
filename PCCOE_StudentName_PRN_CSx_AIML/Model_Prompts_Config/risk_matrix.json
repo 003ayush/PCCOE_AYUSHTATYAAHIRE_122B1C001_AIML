@@ -1,0 +1,11 @@
+{
+  "_comment": "Risk matrix v1: impact (0-4) rows x feasibility (0-4) columns -> risk value 0-5. ISO/SAE 21434 style. Edit values only, never code.",
+  "version": 1,
+  "matrix": [
+    [0, 0, 0, 0, 1],
+    [0, 0, 1, 1, 2],
+    [0, 1, 2, 2, 3],
+    [1, 2, 3, 3, 4],
+    [2, 3, 4, 4, 5]
+  ]
+}

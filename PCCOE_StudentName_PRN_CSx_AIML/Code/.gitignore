@@ -1,0 +1,7 @@
+# Generated / local-only files — never commit these.
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+tara.db
+chroma_db/

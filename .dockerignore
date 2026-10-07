@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+tara.db
+chroma_db/
+PCCOE_StudentName_PRN_CSx_AIML/Model_Prompts_Config/.env

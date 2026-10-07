@@ -1,0 +1,24 @@
+# TARA Assistant — API on :8000, UI on :8501, state in the tara-data volume.
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - tara-data:/data
+    environment:
+      LLM_PROVIDER: mock
+  ui:
+    build: .
+    command: ["streamlit", "run", "ui/streamlit_app.py", "--server.port", "8501",
+              "--server.address", "0.0.0.0", "--server.headless", "true"]
+    working_dir: /app/PCCOE_StudentName_PRN_CSx_AIML/Code
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      API_URL: http://api:8000
+
+volumes:
+  tara-data:

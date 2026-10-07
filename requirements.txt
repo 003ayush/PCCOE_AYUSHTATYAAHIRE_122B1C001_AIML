@@ -1,0 +1,33 @@
+# TARA Assistant — CORE dependencies (fast install, no torch).
+#
+# Fresh-machine quick start from the workspace root:
+#   python -m venv venv
+#   venv\Scripts\pip install -r requirements.txt          (Windows)
+#   cp Model_Prompts_Config/.env.example .../.env, set GROQ_API_KEY + LLM_PROVIDER=groq
+#
+# This core set runs the FULL app (mock or Groq LLM, deterministic hash
+# embeddings, in-memory vector store). For production-grade retrieval add:
+#   venv\Scripts\pip install -r requirements-ml.txt       (BGE embeddings + ChromaDB)
+
+# --- API ---
+fastapi
+uvicorn[standard]
+httpx
+
+# --- UI ---
+streamlit
+
+# --- Schemas / structured storage / config ---
+pydantic
+sqlalchemy
+python-dotenv
+
+# --- LLM providers, OpenAI-compatible (Groq/Gemini/OpenRouter/NVIDIA) ---
+openai
+
+# --- Agentic pipeline ---
+langgraph
+langchain-core
+
+# --- Tests ---
+pytest

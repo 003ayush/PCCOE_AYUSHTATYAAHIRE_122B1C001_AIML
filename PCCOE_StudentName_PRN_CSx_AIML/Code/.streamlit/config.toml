@@ -1,0 +1,13 @@
+[theme]
+base = "light"
+primaryColor = "#1d4ed8"
+backgroundColor = "#f1f5f9"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#0f172a"
+font = "sans serif"
+
+[server]
+headless = true
+# The venv holds multi-GB packages (torch, chromadb); watching the filesystem
+# on every interaction makes navigation laggy, so disable the watcher.
+fileWatcherType = "none"

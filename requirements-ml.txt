@@ -1,0 +1,7 @@
+# TARA Assistant — ML-grade retrieval (large download: pulls torch).
+# Install AFTER requirements.txt. Enables BGE embeddings + persistent ChromaDB.
+# Without these the app falls back to deterministic hash embeddings and an
+# in-memory store (fully functional, placeholder-grade retrieval quality).
+-r requirements.txt
+chromadb
+sentence-transformers

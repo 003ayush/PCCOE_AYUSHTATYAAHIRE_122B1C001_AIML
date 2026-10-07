@@ -1,0 +1,1026 @@
+[
+  {
+    "id": "THREAT-001",
+    "title": "Back-end servers used as a means to attack a vehicle or extract data",
+    "description": "Abuse of privileges by staff (insider attack)",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 1.1",
+    "typical_assets": [
+      "Remote Command Channel",
+      "Firmware Update Package",
+      "Cryptographic Keys"
+    ],
+    "standard_mitigations": [
+      "M1 (Annex 5 Part B/C): Security Controls are applied to back-end systems to minimise the risk of insider attack"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-002",
+    "title": "Back-end servers used as a means to attack a vehicle or extract data",
+    "description": "Unauthorized internet access to the server (enabled for example by backdoors, unpatched system software vulnerabilities, SQL attacks or other means)",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 1.2",
+    "typical_assets": [
+      "Remote Command Channel",
+      "Firmware Update Package",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M2 (Annex 5 Part B/C): Security Controls are applied to back-end systems to minimise unauthorised access. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-003",
+    "title": "Services from back-end server being disrupted, affecting the operation of a vehicle",
+    "description": "Attack on back-end server stops it functioning, for example it prevents it from interacting with vehicles and providing services they rely on",
+    "stride_category": "Denial of Service",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 2.1",
+    "typical_assets": [
+      "Remote Command Channel",
+      "Telemetry Data",
+      "Cellular Connectivity Service"
+    ],
+    "standard_mitigations": [
+      "M3 (Annex 5 Part B/C): Security Controls are applied to back-end systems. Where back-end servers are critical to the provision of services there are recovery measures in case of system outage. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-004",
+    "title": "Vehicle related data held on back-end servers being lost or compromised ('data breach')",
+    "description": "Loss of information in the cloud. Sensitive data may be lost due to attacks or accidents when data is stored by third-party cloud service providers",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 3.2",
+    "typical_assets": [
+      "Telemetry Data",
+      "Personal Data"
+    ],
+    "standard_mitigations": [
+      "M4 (Annex 5 Part B/C): Security Controls are applied to minimise risks associated with cloud computing. Example Security Controls can be found in OWASP and NCSC cloud computing guidance"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-005",
+    "title": "Vehicle related data held on back-end servers being lost or compromised ('data breach')",
+    "description": "Unauthorized internet access to the server (enabled for example by backdoors, unpatched system software vulnerabilities, SQL attacks or other means)",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 3.3",
+    "typical_assets": [
+      "Telemetry Data",
+      "Personal Data"
+    ],
+    "standard_mitigations": [
+      "M2 (Annex 5 Part B/C): Security Controls are applied to back-end systems to minimise unauthorised access. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-006",
+    "title": "Vehicle related data held on back-end servers being lost or compromised ('data breach')",
+    "description": "Information breach by unintended sharing of data (e.g. admin errors)",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 3.5",
+    "typical_assets": [
+      "Telemetry Data",
+      "Personal Data"
+    ],
+    "standard_mitigations": [
+      "M5 (Annex 5 Part B/C): Security Controls are applied to back-end systems to prevent data breaches. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-007",
+    "title": "Spoofing of messages or data received by the vehicle",
+    "description": "Spoofing of messages by impersonation (e.g. 802.11p V2X during platooning, GNSS messages, etc.)",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 4.1",
+    "typical_assets": [
+      "Positioning Data (GNSS)",
+      "Remote Command Channel",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M10 (Annex 5 Part B/C): The vehicle shall verify the authenticity and integrity of messages it receives"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-008",
+    "title": "Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+    "description": "Communications channels permit code injection, for example tampered software binary might be injected into the communication stream",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 5.1",
+    "typical_assets": [
+      "Firmware Update Package",
+      "Stored Application Software"
+    ],
+    "standard_mitigations": [
+      "M10 (Annex 5 Part B/C): The vehicle shall verify the authenticity and integrity of messages it receives",
+      "M6 (Annex 5 Part B/C): Systems shall implement security by design to minimize risks"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-009",
+    "title": "Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+    "description": "Communications channels permit manipulate of vehicle held data/code",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 5.2",
+    "typical_assets": [
+      "Stored Application Software",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-010",
+    "title": "Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+    "description": "Communications channels permit overwrite of vehicle held data/code",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 5.3",
+    "typical_assets": [
+      "Stored Application Software",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-011",
+    "title": "Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+    "description": "Communications channels permit erasure of vehicle held data/code",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 5.4",
+    "typical_assets": [
+      "Stored Application Software",
+      "Security Event Logs"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-012",
+    "title": "Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+    "description": "Communications channels permit introduction of data/code to the vehicle (write data code)",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 5.5",
+    "typical_assets": [
+      "Stored Application Software",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-013",
+    "title": "Communication channels permit untrusted/unreliable messages to be accepted or are vulnerable to session hijacking/replay attacks",
+    "description": "Accepting information from an unreliable or untrusted source",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 6.1",
+    "typical_assets": [
+      "Remote Command Channel",
+      "Cellular Connectivity Service"
+    ],
+    "standard_mitigations": [
+      "M10 (Annex 5 Part B/C): The vehicle shall verify the authenticity and integrity of messages it receives"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-014",
+    "title": "Communication channels permit untrusted/unreliable messages to be accepted or are vulnerable to session hijacking/replay attacks",
+    "description": "Man in the middle attack/ session hijacking",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 6.2",
+    "typical_assets": [
+      "Remote Command Channel",
+      "Telemetry Data",
+      "Cellular Connectivity Service"
+    ],
+    "standard_mitigations": [
+      "M10 (Annex 5 Part B/C): The vehicle shall verify the authenticity and integrity of messages it receives"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-015",
+    "title": "Communication channels permit untrusted/unreliable messages to be accepted or are vulnerable to session hijacking/replay attacks",
+    "description": "Replay attack, for example an attack against a communication gateway allows the attacker to downgrade software of an ECU or firmware of the gateway",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 6.3",
+    "typical_assets": [
+      "Remote Command Channel",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M10 (Annex 5 Part B/C): The vehicle shall verify the authenticity and integrity of messages it receives"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-016",
+    "title": "Information can be readily disclosed. For example, through eavesdropping on communications or through allowing unauthorized access to sensitive files or folders",
+    "description": "Interception of information / interfering radiations / monitoring communications",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 7.1",
+    "typical_assets": [
+      "Telemetry Data",
+      "Personal Data",
+      "Cellular Connectivity Service"
+    ],
+    "standard_mitigations": [
+      "M12 (Annex 5 Part B/C): Confidential data transmitted to or from the vehicle shall be protected"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-017",
+    "title": "Information can be readily disclosed. For example, through eavesdropping on communications or through allowing unauthorized access to sensitive files or folders",
+    "description": "Gaining unauthorized access to files or data",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 7.2",
+    "typical_assets": [
+      "Personal Data",
+      "Stored Application Software",
+      "Cryptographic Keys"
+    ],
+    "standard_mitigations": [
+      "M8 (Annex 5 Part B/C): Through system design and access control it should not be possible for unauthorized personnel to access personal or system critical data. Example of Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-018",
+    "title": "Denial of service attacks via communication channels to disrupt vehicle functions",
+    "description": "Sending a large number of garbage data to vehicle information system, so that it is unable to provide services in the normal manner",
+    "stride_category": "Denial of Service",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 8.1",
+    "typical_assets": [
+      "Cellular Connectivity Service",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M13 (Annex 5 Part B/C): Measures to detect and recover from a denial of service attack shall be employed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-019",
+    "title": "An unprivileged user is able to gain privileged access to vehicle systems",
+    "description": "An unprivileged user is able to gain privileged access, for example root access",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 9.1",
+    "typical_assets": [
+      "Stored Application Software",
+      "Boot Configuration and Root of Trust"
+    ],
+    "standard_mitigations": [
+      "M9 (Annex 5 Part B/C): Measures to prevent and detect unauthorized access shall be employed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-020",
+    "title": "Viruses embedded in communication media are able to infect vehicle systems",
+    "description": "Virus embedded in communication media infects vehicle systems",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 10.1",
+    "typical_assets": [
+      "Stored Application Software",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M14 (Annex 5 Part B/C): Measures to protect systems against embedded viruses/malware should be considered"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-021",
+    "title": "Messages received by the vehicle (for example X2V or diagnostic messages), or transmitted within it, contain malicious content",
+    "description": "Malicious internal (e.g. CAN) messages",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 11.1",
+    "typical_assets": [
+      "Vehicle CAN Bus"
+    ],
+    "standard_mitigations": [
+      "M15 (Annex 5 Part B/C): Measures to detect malicious internal messages or activity should be considered"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-022",
+    "title": "Messages received by the vehicle (for example X2V or diagnostic messages), or transmitted within it, contain malicious content",
+    "description": "Malicious diagnostic messages",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 11.3",
+    "typical_assets": [
+      "Diagnostic Interface",
+      "Vehicle CAN Bus"
+    ],
+    "standard_mitigations": [
+      "M10 (Annex 5 Part B/C): The vehicle shall verify the authenticity and integrity of messages it receives"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-023",
+    "title": "Messages received by the vehicle (for example X2V or diagnostic messages), or transmitted within it, contain malicious content",
+    "description": "Malicious proprietary messages (e.g. those normally sent from OEM or component/system/function supplier)",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 11.4",
+    "typical_assets": [
+      "Remote Command Channel",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M10 (Annex 5 Part B/C): The vehicle shall verify the authenticity and integrity of messages it receives"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-024",
+    "title": "Misuse or compromise of update procedures",
+    "description": "Compromise of over the air software update procedures. This includes fabricating the system update program or firmware",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 12.1",
+    "typical_assets": [
+      "Firmware Update Package",
+      "Cellular Connectivity Service"
+    ],
+    "standard_mitigations": [
+      "M16 (Annex 5 Part B/C): Secure software update procedures shall be employed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-025",
+    "title": "Misuse or compromise of update procedures",
+    "description": "Compromise of local/physical software update procedures. This includes fabricating the system update program or firmware",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 12.2",
+    "typical_assets": [
+      "Firmware Update Package",
+      "Diagnostic Interface"
+    ],
+    "standard_mitigations": [
+      "M16 (Annex 5 Part B/C): Secure software update procedures shall be employed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-026",
+    "title": "Misuse or compromise of update procedures",
+    "description": "The software is manipulated before the update process (and is therefore corrupted), although the update process is intact",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 12.3",
+    "typical_assets": [
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M16 (Annex 5 Part B/C): Secure software update procedures shall be employed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-027",
+    "title": "Misuse or compromise of update procedures",
+    "description": "Compromise of cryptographic keys of the software provider to allow invalid update",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 12.4",
+    "typical_assets": [
+      "Firmware Update Package",
+      "Cryptographic Keys"
+    ],
+    "standard_mitigations": [
+      "M11 (Annex 5 Part B/C): Security controls shall be implemented for storing cryptographic keys (e.g., use of Hardware Security Modules)"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-028",
+    "title": "It is possible to deny legitimate updates",
+    "description": "Denial of Service attack against update server or network to prevent rollout of critical software updates and/or unlock of customer specific features",
+    "stride_category": "Denial of Service",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 13.1",
+    "typical_assets": [
+      "Firmware Update Package",
+      "Cellular Connectivity Service"
+    ],
+    "standard_mitigations": [
+      "M3 (Annex 5 Part B/C): Security Controls are applied to back-end systems. Where back-end servers are critical to the provision of services there are recovery measures in case of system outage. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-029",
+    "title": "Legitimate actors are able to take actions that would unwittingly facilitate a cyberattack",
+    "description": "Innocent victim (e.g. owner, operator or maintenance engineer) being tricked into taking an action to unintentionally load malware or enable an attack",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 15.1",
+    "typical_assets": [
+      "Stored Application Software",
+      "Diagnostic Interface"
+    ],
+    "standard_mitigations": [
+      "M18 (Annex 5 Part B/C): Measures shall be implemented for defining and controlling user roles and access privileges, based on the principle of least access privilege"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-030",
+    "title": "Legitimate actors are able to take actions that would unwittingly facilitate a cyberattack",
+    "description": "Defined security procedures are not followed",
+    "stride_category": "Repudiation",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 15.2",
+    "typical_assets": [
+      "Security Event Logs",
+      "Cryptographic Keys"
+    ],
+    "standard_mitigations": [
+      "M19 (Annex 5 Part B/C): Organizations shall ensure security procedures are defined and followed including logging of actions and access related to the management of the security functions"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-031",
+    "title": "Manipulation of the connectivity of vehicle functions enables a cyberattack, this can include telematics; systems that permit remote operations; and systems using short range wireless communications",
+    "description": "Manipulation of functions designed to remotely operate systems, such as remote key, immobilizer, and charging pile",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 16.1",
+    "typical_assets": [
+      "Remote Command Channel"
+    ],
+    "standard_mitigations": [
+      "M20 (Annex 5 Part B/C): Security controls shall be applied to systems that have remote access"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-032",
+    "title": "Manipulation of the connectivity of vehicle functions enables a cyberattack, this can include telematics; systems that permit remote operations; and systems using short range wireless communications",
+    "description": "Manipulation of vehicle telematics (e.g. manipulate temperature measurement of sensitive goods, remotely unlock cargo doors)",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 16.2",
+    "typical_assets": [
+      "Telemetry Data",
+      "Remote Command Channel"
+    ],
+    "standard_mitigations": [
+      "M20 (Annex 5 Part B/C): Security controls shall be applied to systems that have remote access"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-033",
+    "title": "Manipulation of the connectivity of vehicle functions enables a cyberattack, this can include telematics; systems that permit remote operations; and systems using short range wireless communications",
+    "description": "Interference with short range wireless systems or sensors",
+    "stride_category": "Denial of Service",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 16.3",
+    "typical_assets": [
+      "Cellular Connectivity Service",
+      "Positioning Data (GNSS)"
+    ],
+    "standard_mitigations": [
+      "M20 (Annex 5 Part B/C): Security controls shall be applied to systems that have remote access"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-034",
+    "title": "Hosted 3rd party software, e.g. entertainment applications, used as a means to attack vehicle systems",
+    "description": "Corrupted applications, or those with poor software security, used as a method to attack vehicle systems",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 17.1",
+    "typical_assets": [
+      "Stored Application Software"
+    ],
+    "standard_mitigations": [
+      "M21 (Annex 5 Part B/C): Software shall be security assessed, authenticated and integrity protected. Security controls shall be applied to minimise the risk from third party software that is intended or foreseeable to be hosted on the vehicle"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-035",
+    "title": "Devices connected to external interfaces e.g. USB ports, OBD port, used as a means to attack vehicle systems",
+    "description": "External interfaces such as USB or other ports used as a point of attack, for example through code injection",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 18.1",
+    "typical_assets": [
+      "Diagnostic Interface",
+      "Stored Application Software"
+    ],
+    "standard_mitigations": [
+      "M22 (Annex 5 Part B/C): Security controls shall be applied to external interfaces"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-036",
+    "title": "Devices connected to external interfaces e.g. USB ports, OBD port, used as a means to attack vehicle systems",
+    "description": "Media infected with a virus connected to a vehicle system",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 18.2",
+    "typical_assets": [
+      "Stored Application Software",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M22 (Annex 5 Part B/C): Security controls shall be applied to external interfaces"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-037",
+    "title": "Devices connected to external interfaces e.g. USB ports, OBD port, used as a means to attack vehicle systems",
+    "description": "Diagnostic access (e.g. dongles in OBD port) used to facilitate an attack, e.g. manipulate vehicle parameters (directly or indirectly)",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 18.3",
+    "typical_assets": [
+      "Diagnostic Interface",
+      "Vehicle CAN Bus"
+    ],
+    "standard_mitigations": [
+      "M22 (Annex 5 Part B/C): Security controls shall be applied to external interfaces"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-038",
+    "title": "Extraction of vehicle data/code",
+    "description": "Extraction of copyright or proprietary software from vehicle systems (product piracy)",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 19.1",
+    "typical_assets": [
+      "Stored Application Software",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-039",
+    "title": "Extraction of vehicle data/code",
+    "description": "Unauthorized access to the owner's privacy information such as personal identity, payment account information, address book information, location information, vehicle's electronic ID, etc.",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 19.2",
+    "typical_assets": [
+      "Personal Data",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M8 (Annex 5 Part B/C): Through system design and access control it should not be possible for unauthorized personnel to access personal or system critical data. Example of Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-040",
+    "title": "Extraction of vehicle data/code",
+    "description": "Extraction of cryptographic keys",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 19.3",
+    "typical_assets": [
+      "Cryptographic Keys",
+      "Boot Configuration and Root of Trust"
+    ],
+    "standard_mitigations": [
+      "M11 (Annex 5 Part B/C): Security controls shall be implemented for storing cryptographic keys (e.g., use of Hardware Security Modules)"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-041",
+    "title": "Manipulation of vehicle data/code",
+    "description": "Illegal/unauthorized changes to vehicle's electronic ID",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 20.1",
+    "typical_assets": [
+      "Cellular Connectivity Service",
+      "Personal Data"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-042",
+    "title": "Manipulation of vehicle data/code",
+    "description": "Identity fraud. For example, if a user wants to display another identity when communicating with toll systems, manufacturer backend",
+    "stride_category": "Spoofing",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 20.2",
+    "typical_assets": [
+      "Cellular Connectivity Service",
+      "Remote Command Channel"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-043",
+    "title": "Manipulation of vehicle data/code",
+    "description": "Action to circumvent monitoring systems (e.g. hacking/ tampering/ blocking of messages such as ODR Tracker data, or number of runs)",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 20.3",
+    "typical_assets": [
+      "Telemetry Data",
+      "Security Event Logs"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-044",
+    "title": "Manipulation of vehicle data/code",
+    "description": "Data manipulation to falsify vehicle's driving data (e.g. mileage, driving speed, driving directions, etc.)",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 20.4",
+    "typical_assets": [
+      "Telemetry Data",
+      "Positioning Data (GNSS)"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-045",
+    "title": "Manipulation of vehicle data/code",
+    "description": "Unauthorized changes to system diagnostic data",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 20.5",
+    "typical_assets": [
+      "Telemetry Data",
+      "Diagnostic Interface"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-046",
+    "title": "Erasure of data/code",
+    "description": "Unauthorized deletion/manipulation of system event logs",
+    "stride_category": "Repudiation",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 21.1",
+    "typical_assets": [
+      "Security Event Logs"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-047",
+    "title": "Introduction of malware",
+    "description": "Introduce malicious software or malicious software activity",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 22.2",
+    "typical_assets": [
+      "Stored Application Software",
+      "Firmware Update Package"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-048",
+    "title": "Introduction of new software or overwrite existing software",
+    "description": "Fabrication of software of the vehicle control system or information system",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 23.1",
+    "typical_assets": [
+      "Firmware Update Package",
+      "Stored Application Software",
+      "Boot Configuration and Root of Trust"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-049",
+    "title": "Disruption of systems or operations",
+    "description": "Denial of service, for example this may be triggered on the internal network by flooding a CAN bus, or by provoking faults on an ECU via a high rate of messaging",
+    "stride_category": "Denial of Service",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 24.1",
+    "typical_assets": [
+      "Vehicle CAN Bus"
+    ],
+    "standard_mitigations": [
+      "M13 (Annex 5 Part B/C): Measures to detect and recover from a denial of service attack shall be employed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-050",
+    "title": "Manipulation of vehicle parameters",
+    "description": "Unauthorized access of falsify the configuration parameters of vehicle's key functions, such as brake data, airbag deployed threshold, etc.",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 25.1",
+    "typical_assets": [
+      "Vehicle CAN Bus",
+      "Stored Application Software"
+    ],
+    "standard_mitigations": [
+      "M7 (Annex 5 Part B/C): Access control techniques and designs shall be applied to protect system data/code. Example Security Controls can be found in OWASP"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-051",
+    "title": "Cryptographic technologies can be compromised or are insufficiently applied",
+    "description": "Combination of short encryption keys and long period of validity enables attacker to break encryption",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 26.1",
+    "typical_assets": [
+      "Cryptographic Keys",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-052",
+    "title": "Cryptographic technologies can be compromised or are insufficiently applied",
+    "description": "Insufficient use of cryptographic algorithms to protect sensitive systems",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 26.2",
+    "typical_assets": [
+      "Cryptographic Keys",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-053",
+    "title": "Cryptographic technologies can be compromised or are insufficiently applied",
+    "description": "Using already or soon to be deprecated cryptographic algorithms",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 26.3",
+    "typical_assets": [
+      "Cryptographic Keys",
+      "Telemetry Data"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-054",
+    "title": "Parts or supplies could be compromised to permit vehicles to be attacked",
+    "description": "Hardware or software, engineered to enable an attack or fails to meet design criteria to stop an attack",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 27.1",
+    "typical_assets": [
+      "Stored Application Software",
+      "Boot Configuration and Root of Trust"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-055",
+    "title": "Software or hardware development permits vulnerabilities",
+    "description": "Software bugs. The presence of software bugs can be a basis for potential exploitable vulnerabilities. This is particularly true if software has not been tested to verify that known bad code/bugs is not present and reduce the risk of unknown bad code/bugs being present",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 28.1",
+    "typical_assets": [
+      "Stored Application Software",
+      "Cellular Connectivity Service"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-056",
+    "title": "Software or hardware development permits vulnerabilities",
+    "description": "Using remainders from development (e.g. debug ports, JTAG ports, microprocessors, development certificates, developer passwords, ...) can permit access to ECUs or permit attackers to gain higher privileges",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 28.2",
+    "typical_assets": [
+      "Boot Configuration and Root of Trust",
+      "Cryptographic Keys",
+      "Stored Application Software"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-057",
+    "title": "Network design introduces vulnerabilities",
+    "description": "Superfluous internet ports left open, providing access to network systems",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 29.1",
+    "typical_assets": [
+      "Cellular Connectivity Service",
+      "Stored Application Software"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-058",
+    "title": "Network design introduces vulnerabilities",
+    "description": "Circumvent network separation to gain control. Specific example is the use of unprotected gateways, or access points (such as truck-trailer gateways), to circumvent protections and gain access to other network segments to perform malicious acts, such as sending arbitrary CAN bus messages",
+    "stride_category": "Elevation of Privilege",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 29.2",
+    "typical_assets": [
+      "Vehicle CAN Bus",
+      "Stored Application Software"
+    ],
+    "standard_mitigations": [
+      "M23 (Annex 5 Part B/C): Cybersecurity best practices for software and hardware development shall be followed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-059",
+    "title": "Unintended transfer of data can occur",
+    "description": "Information breach. Personal data may be leaked when the car changes user (e.g. is sold or is used as hire vehicle with new hirers)",
+    "stride_category": "Information Disclosure",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 31.1",
+    "typical_assets": [
+      "Personal Data"
+    ],
+    "standard_mitigations": [
+      "M24 (Annex 5 Part B/C): Best practices for the protection of data integrity and confidentiality shall be followed for storing personal data"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  },
+  {
+    "id": "THREAT-060",
+    "title": "Physical manipulation of systems can enable an attack",
+    "description": "Manipulation of electronic hardware, e.g. unauthorized electronic hardware added to a vehicle to enable 'man-in-the-middle' attack",
+    "stride_category": "Tampering",
+    "un_r155_reference": "Annex 5, Part A, Table A1, ref 32.1",
+    "typical_assets": [
+      "Vehicle CAN Bus",
+      "Stored Application Software",
+      "Boot Configuration and Root of Trust"
+    ],
+    "standard_mitigations": [
+      "M9 (Annex 5 Part B/C): Measures to prevent and detect unauthorized access shall be employed"
+    ],
+    "mapping_owner": "TARA team",
+    "mapping_review_date": "2026-10-07",
+    "mapping_version": 1
+  }
+]

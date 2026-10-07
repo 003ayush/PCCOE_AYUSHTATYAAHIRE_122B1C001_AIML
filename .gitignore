@@ -1,0 +1,20 @@
+# Environments
+venv/
+env/
+.env
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/

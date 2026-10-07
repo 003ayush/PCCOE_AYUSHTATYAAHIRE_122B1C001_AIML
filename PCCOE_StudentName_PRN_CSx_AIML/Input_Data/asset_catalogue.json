@@ -1,0 +1,14 @@
+[
+  {"id": "ASSET-01", "name": "Firmware Update Package", "description": "The binary file containing the OS or application software updates for the TCU.", "security_properties_required": ["Integrity", "Authenticity", "Confidentiality"]},
+  {"id": "ASSET-02", "name": "Cryptographic Keys", "description": "Private keys and symmetric keys used for TLS, secure boot, and Secure Onboard Communication (SecOC).", "security_properties_required": ["Confidentiality", "Integrity"]},
+  {"id": "ASSET-03", "name": "Telemetry Data", "description": "Vehicle speed, location, diagnostics, and driver behavior logs sent to the cloud.", "security_properties_required": ["Confidentiality", "Integrity"]},
+  {"id": "ASSET-04", "name": "Vehicle CAN Bus", "description": "The internal communication network connecting critical vehicle ECUs.", "security_properties_required": ["Availability", "Integrity"]},
+  {"id": "ASSET-05", "name": "Security Event Logs", "description": "On-device records of security events, remote commands and OTA actions used for forensics.", "security_properties_required": ["Integrity", "Non-repudiation", "Availability"]},
+  {"id": "ASSET-06", "name": "Boot Configuration and Root of Trust", "description": "Bootloader, secure boot settings and fuse configuration that anchor software trust.", "security_properties_required": ["Integrity", "Authenticity"]},
+  {"id": "ASSET-07", "name": "Personal Data", "description": "Location history, driver identifiers and subscriber data stored or processed by the TCU.", "security_properties_required": ["Confidentiality", "Integrity"]},
+  {"id": "ASSET-08", "name": "Diagnostic Interface", "description": "OBD-II/UDS diagnostic access used by workshops and tools to read data and reprogram the TCU.", "security_properties_required": ["Authenticity", "Integrity", "Availability"]},
+  {"id": "ASSET-09", "name": "Remote Command Channel", "description": "Backend-to-vehicle channel carrying remote commands such as lock, unlock and immobilise.", "security_properties_required": ["Authenticity", "Integrity", "Availability"]},
+  {"id": "ASSET-10", "name": "Cellular Connectivity Service", "description": "The modem link and SIM/eSIM identity providing cloud connectivity and emergency services.", "security_properties_required": ["Availability", "Authenticity"]},
+  {"id": "ASSET-11", "name": "Positioning Data (GNSS)", "description": "Position and time derived from the GNSS receiver, used for tracking, geofencing and timestamps.", "security_properties_required": ["Integrity", "Availability"]},
+  {"id": "ASSET-12", "name": "Stored Application Software", "description": "TCU application code and configuration held in external flash memory.", "security_properties_required": ["Integrity", "Confidentiality"]}
+]

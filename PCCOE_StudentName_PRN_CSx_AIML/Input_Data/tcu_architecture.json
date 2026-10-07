@@ -1,0 +1,136 @@
+{
+  "project": "Telematics Control Unit (TCU) TARA",
+  "version": "1.0",
+  "components": [
+    {
+      "id": "C-01",
+      "name": "Main MCU",
+      "type": "Microcontroller",
+      "description": "Central processing unit handling telematics logic, routing, and OS.",
+      "trust_boundary": "Internal TCU Core"
+    },
+    {
+      "id": "C-02",
+      "name": "Cellular Modem (NAD)",
+      "type": "Communication Module",
+      "description": "4G/5G modem for external communication with OEM cloud.",
+      "trust_boundary": "External Facing"
+    },
+    {
+      "id": "C-03",
+      "name": "GNSS Receiver",
+      "type": "Sensor",
+      "description": "Provides precise positioning (GPS, GLONASS).",
+      "trust_boundary": "External Facing"
+    },
+    {
+      "id": "C-04",
+      "name": "Hardware Security Module (HSM)",
+      "type": "Security Enclave",
+      "description": "Dedicated hardware for isolated cryptographic keys and secure boot.",
+      "trust_boundary": "Secure Enclave"
+    },
+    {
+      "id": "C-05",
+      "name": "CAN Transceiver",
+      "type": "Network Interface",
+      "description": "Physical interface to the internal vehicle CAN bus.",
+      "trust_boundary": "Internal Vehicle Network"
+    },
+    {
+      "id": "C-06",
+      "name": "External Flash Memory",
+      "type": "Storage",
+      "description": "Stores application firmware, configuration, logs and buffered telemetry.",
+      "trust_boundary": "Internal TCU Core"
+    },
+    {
+      "id": "C-07",
+      "name": "SIM / eSIM",
+      "type": "Identity Module",
+      "description": "Subscriber identity used to authenticate the TCU to the cellular network.",
+      "trust_boundary": "External Facing"
+    },
+    {
+      "id": "C-08",
+      "name": "Bluetooth/Wi-Fi Module",
+      "type": "Communication Module",
+      "description": "Short-range wireless link for in-vehicle pairing and workshop configuration.",
+      "trust_boundary": "External Facing"
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "I-01",
+      "name": "OTA & Telemetry Channel",
+      "source": "OEM Cloud (External)",
+      "destination": "C-02",
+      "protocol": "TCP/IP (TLS)",
+      "description": "Cellular connection for Over-the-Air updates and telemetry data."
+    },
+    {
+      "id": "I-02",
+      "name": "Modem to MCU Bus",
+      "source": "C-02",
+      "destination": "C-01",
+      "protocol": "UART/USB",
+      "description": "Internal communication between cellular modem and main MCU."
+    },
+    {
+      "id": "I-03",
+      "name": "MCU to HSM",
+      "source": "C-01",
+      "destination": "C-04",
+      "protocol": "SPI",
+      "description": "Requests for cryptographic operations (signing, decryption)."
+    },
+    {
+      "id": "I-04",
+      "name": "MCU to CAN",
+      "source": "C-01",
+      "destination": "C-05",
+      "protocol": "CAN",
+      "description": "Transmission of vehicle control commands and reading internal sensor data."
+    },
+    {
+      "id": "I-05",
+      "name": "Debug Port",
+      "source": "Physical Access",
+      "destination": "C-01",
+      "protocol": "JTAG/UART",
+      "description": "Hardware debug interface for development and diagnostics."
+    },
+    {
+      "id": "I-06",
+      "name": "OBD-II Diagnostics",
+      "source": "Workshop Tester (External)",
+      "destination": "C-05",
+      "protocol": "UDS over CAN",
+      "description": "Diagnostic access for reading faults and reprogramming ECUs."
+    },
+    {
+      "id": "I-07",
+      "name": "GNSS Antenna Link",
+      "source": "Satellites (External)",
+      "destination": "C-03",
+      "protocol": "GNSS RF",
+      "description": "Unauthenticated radio signals providing position and time."
+    },
+    {
+      "id": "I-08",
+      "name": "MCU to External Flash",
+      "source": "C-01",
+      "destination": "C-06",
+      "protocol": "QSPI",
+      "description": "Reads and writes firmware, logs and buffered data."
+    },
+    {
+      "id": "I-09",
+      "name": "Short-range Wireless",
+      "source": "Nearby Device (External)",
+      "destination": "C-08",
+      "protocol": "Bluetooth LE / Wi-Fi",
+      "description": "Local pairing and configuration channel."
+    }
+  ]
+}
